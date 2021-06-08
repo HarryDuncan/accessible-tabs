@@ -2,8 +2,9 @@
 # Getting Started with accessible tabs
 
 1. First clone/download repo on to machine.
-2. run npm install
-3. then run npm run start
+2. cd into the root folder of the app
+3. run npm install
+4. then run npm run start
 
 # To Test
 
