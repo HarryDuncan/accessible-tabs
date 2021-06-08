@@ -1,0 +1,12 @@
+button{
+
+  font-weight: 500;
+  font-size: 1.5em;
+}
+.active{
+  background: black;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5em;
+
+}
