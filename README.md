@@ -1,11 +1,9 @@
 
-# Getting Started with acceible tabs
+# Getting Started with accessible tabs
 
 1. First clone/download repo on to machine.
-2. run
-    ## `npm install`
-3. then run
-  ## `npm run start`
+2. run npm install
+3. then run npm run start
 
 # To Test
 
@@ -14,7 +12,9 @@
 1. clone/download repo on to machine.
 2. run
     ## `npm install`
+
+
 3. command
   ### `npm run test`
 
-4.When command prompt prompts you press a to run all tests
+4. When command prompt prompts you press a to run all tests
