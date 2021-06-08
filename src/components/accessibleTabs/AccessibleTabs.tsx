@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState,  useRef} from 'react';
 
 // Don't normally like to use css - but styles are pretty simple for this one
 import './TabStyles.css';
@@ -103,13 +103,7 @@ export const AccessibleTabs: React.FunctionComponent<IAccessibleTabsProps> = (pr
       //  var vertical = tablist.getAttribute('aria-orientation') == 'vertical';
         var proceed = false;
 
-        // if (vertical) {
-        //   if (key === keys.up || key === keys.down) {
-        //     event.preventDefault();
-        //     proceed = true;
-        //   };
-        // }
-        // else {
+
 
           if (key === keys.left || key === keys.right) {
             proceed = true;
@@ -150,32 +144,12 @@ export const AccessibleTabs: React.FunctionComponent<IAccessibleTabsProps> = (pr
     };
   }
 
-  // When component mounts, add a on key listener
-  useEffect(() => {
-      // Make sure element supports addEventListener
-      // On
-      const isSupported = window && window.addEventListener;
-      if (!isSupported) return;
 
-      // Create event listener that calls handler function stored in ref
-      // if(tabsRef !== null  && tabsRef !== undefined && tabsRef.current !== undefined ){
-      //   const eventListener = (event : any)  => tabsRef.current?(event) : null;
-      //
-      //   // Add event listener
-      //   window.addEventListener('keydown', _keyPressed);
-      //
-      //   // Remove event listener on cleanup
-      //   return () => {
-      //     window.removeEventListener('keydown', _keyPressed);
-      //   };
-      // }
-
-  }, [])
 
   return (
     <div className='tabs'>
       <div ref={tabsRef} className='tab-container'>
-        <h1>{props.tabTitle}</h1> <h1>{selectedTab}</h1>
+        <h1>{props.tabTitle}</h1>
         <div  role="tablist" aria-label={props.tabTitle}>
           {props.tabItems.map((item, index) => (
             <button key={`${index} ${selectedTab}`}
@@ -194,11 +168,11 @@ export const AccessibleTabs: React.FunctionComponent<IAccessibleTabsProps> = (pr
       {props.tabItems.map((item, index) => (
         <div  key={`tabContent ${index}`}
               tabIndex={0}
-             role="tabpanel"
-             id={item['tabId']}
-             aria-expanded={selectedTab === item['tabId']}
-             hidden={selectedTab !== item['tabId']}
-             aria-labelledby={item.tabHeader}
+               role="tabpanel"
+               id={item['tabId']}
+               aria-expanded={selectedTab === item['tabId']}
+               hidden={selectedTab !== item['tabId']}
+               aria-labelledby={item.tabHeader}
              >
             {item.tabContent}
         </div>
